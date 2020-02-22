@@ -18,11 +18,10 @@ body, html
   scroll-behavior: smooth;
   overflow: hidden;
   margin: 0;
-  height: 100vh;
   perspective: 1px;
   transform-style: preserve-3d;
-  overflow-x:hidden;
-  overflow-y:auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .parallax-wrapper {
   width: 100%;
@@ -39,6 +38,10 @@ body, html
   left: 0;
   background-image: url("https://verymanley.github.io/background01.jpg");
   position: absolute;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: -1;
   transform: translateZ(-1px) scale(2);
 }
