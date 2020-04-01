@@ -1,14 +1,16 @@
 @charset "UTF-8";
 /* CSS Document */
 
-* {
+*
+{
   padding: 0px;
   margin: 0px;
   border: 0px;
   box-sizing: border-box;
 }
 
-body, html {
+body, html
+{
   height: 100%;
   font-family: Verdana, Geneva, sans-serif;
   background-color: #282b2d;
@@ -23,7 +25,8 @@ body, html {
   overflow-y: auto;
 }
 
-.content {
+.content
+{
   margin: 0 auto;
   padding: 50px;
   width: 50%;
@@ -34,7 +37,8 @@ body, html {
 /* Parallax base styles
 --------------------------------------------- */
 
-.parallax {
+.parallax
+{
   height: 500px; /* fallback for older browsers */
   height: 100vh;
   overflow-x: hidden;
@@ -45,7 +49,8 @@ body, html {
   perspective-origin: 100% 50%;
 }
 
-.parallax__group {
+.parallax__group
+{
   position: relative;
   height: 500px; /* fallback for older browsers */
   height: 100vh;
@@ -53,7 +58,8 @@ body, html {
   transform-style: preserve-3d;
 }
 
-.parallax__layer {
+.parallax__layer
+{
   position: absolute;
   top: 0;
   left: 0;
@@ -63,13 +69,15 @@ body, html {
   transform-origin: 100% 50%;
 }
 
-.parallax__layer--base {
+.parallax__layer--base
+{
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   z-index: 4;
 }
 
-.parallax__layer--back {
+.parallax__layer--back
+{
   -webkit-transform: translateZ(-300px) scale(2);
   transform: translateZ(-300px) scale(2);
   z-index: 3;
@@ -79,11 +87,13 @@ body, html {
 /* style the groups
 --------------------------------------------- */
 
-#group1 {
+#group1
+{
   z-index: 3; /* slide under groups 1 and 3 */
 }
 
-#group1 .parallax__layer--back {
+#group1 .parallax__layer--back
+{
   background-color: #282b2d;
   background-image: url("https://verymanley.github.io/background01.jpg");
   position: absolute;
@@ -93,11 +103,13 @@ body, html {
   background-size: cover;
 }
 
-#group2 {
+#group2
+{
   z-index: 5; /* slide over group 2 */
 }
 
-#group2 .parallax__layer--base {
+#group2 .parallax__layer--base
+{
   background-color: #282b2d;
 }
 
