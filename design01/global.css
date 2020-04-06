@@ -18,6 +18,46 @@ body, html
   text-decoration: none;
   scroll-behavior: smooth;
   overflow: hidden;
+  margin: 0;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax-wrapper
+{
+  width: 100%;
+  height: 100%;
+  padding-top: 20vh;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+.parallax-wrapper::before
+{
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("https://verymanley.github.io/background01.jpg");
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  transform: translateZ(-1px) scale(2);
+}
+
+.regular-wrapper
+{
+  width: 100%;
+  height: 100%;
+  padding-top: 20vh;
+  z-index: 2;
+  position: relative;
+  background-color: #282b2d;
 }
 
 .content
@@ -26,86 +66,6 @@ body, html
   padding: 50px;
   width: 50%;
   background: #aaa;
-  margin-top: 20vh;
 }
-
-/* Parallax base styles
---------------------------------------------- */
-
-.parallax
-{
-  height: 500px; /* fallback for older browsers */
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-perspective: 300px;
-  perspective: 300px;
-  -webkit-perspective-origin-x: 100%;
-  perspective-origin: 100% 50%;
-}
-
-.parallax__group
-{
-  position: relative;
-  height: 500px; /* fallback for older browsers */
-  height: 100vh;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-
-.parallax__layer
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  -webkit-transform-origin-x: 100%;
-  transform-origin: 100% 50%;
-}
-
-.parallax__layer--base
-{
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  z-index: 4;
-}
-
-.parallax__layer--back
-{
-  -webkit-transform: translateZ(-300px) scale(2);
-  transform: translateZ(-300px) scale(2);
-  z-index: 3;
-}
-
-/* style the groups
---------------------------------------------- */
-
-#group1
-{
-  z-index: 1;
-}
-
-#group1 .parallax__layer--back
-{
-  background-image: url("https://verymanley.github.io/background01.jpg");
-  position: absolute;
-  background-attachment: ;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#group2
-{
-  z-index: 2;
-}
-
-#group2 .parallax__layer--base
-{
-  background-color: #282b2d;
-}
-
-/*--The scale factor can be calculated with 1 + (translateZ * -1) / perspective. For example, if our viewport perspective is set to 1px and we translate an element -2px along the Z axis the correction scale factor would be 3--*/
 
 /*--designed and created by Joshua Manley--*/
